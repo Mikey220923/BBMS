@@ -1,71 +1,107 @@
 *{
 margin:0;
 padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
-
-body{
-background:#f9f9f9;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-.navbar ul{
-display:flex;
-list-style:none;
-}
-
-.navbar li{
-margin-left:30px;
-}
-
-.navbar a{
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
-
-.logo{
-font-size:24px;
-font-weight:bold;
-color:#e53935;
-}
-
-
-
 /* HERO */
 
 .hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:80px;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:80px 60px;
+	min-height:80vh;
+	background:linear-gradient(135deg, #ff6b6b 0%, #e53935 100%);
+	color:#fff;
+	gap:40px;
 }
 
 .hero-text{
-max-width:500px;
+	max-width:620px;
 }
 
 .hero h1{
-font-size:45px;
-margin-bottom:20px;
+	font-size:48px;
+	margin-bottom:18px;
+	line-height:1.05;
+	color: #fff;
 }
 
 .hero p{
-color:#555;
-margin-bottom:30px;
+	color:rgba(255,255,255,0.95);
+	margin-bottom:28px;
+	font-size:18px;
+}
+
+.hero-buttons .btn{
+	padding:12px 26px;
+	margin-right:15px;
+	background:#fff;
+	color:#e53935;
+	border-radius:6px;
+	text-decoration:none;
+	font-weight:700;
+	box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+
+.hero-buttons .btn.secondary{
+	background:transparent;
+	color:#fff;
+	border:2px solid rgba(255,255,255,0.22);
+}
+
+
+/* BLOOD DROP ANIMATION */
+
+.hero-image{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:340px;
+	height:340px;
+    .hero-image img{
+width:320px;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+}
+
+.blood-drop{
+	width:120px;
+	height:165px;
+	background:radial-gradient(circle at 30% 25%, #ff8a8a, #e53935);
+	border-radius:50% 50% 50% 0;
+	transform:rotate(-45deg);
+	animation:drop 2.4s ease-in-out infinite;
+	box-shadow:0 20px 40px rgba(229,57,53,0.25);
+}
+
+@keyframes drop{
+	0%{transform:translateY(0) rotate(-45deg);}
+	50%{transform:translateY(18px) rotate(-45deg);}
+	100%{transform:translateY(0) rotate(-45deg);}
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px){
+	.hero{
+		flex-direction:column-reverse;
+		text-align:center;
+		padding:60px 30px;
+		min-height:unset;
+	}
+
+	.hero-text{max-width:100%;}
+
+	.hero h1{font-size:34px;}
+
+	.hero-image{width:220px;height:220px;margin-bottom:20px}
+
+	.navbar{padding:16px 24px}
+}
 }
 
 .hero-buttons .btn{
@@ -91,6 +127,19 @@ justify-content:center;
 align-items:center;
 width:300px;
 height:300px;
+}
+
+
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .blood-drop{
@@ -167,4 +216,125 @@ padding:20px;
 background:#e53935;
 color:white;
 margin-top:50px;
+}
+
+
+
+/* DASHBOARD */
+
+.dashboard-title{
+text-align:center;
+margin-top:40px;
+}
+
+.dashboard-title h1{
+font-size:40px;
+color:#e53935;
+}
+
+.dashboard-title p{
+color:#555;
+}
+
+
+/* DASHBOARD GRID */
+
+.dashboard{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+padding:50px;
+
+}
+
+
+/* CARD DESIGN */
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+text-align:center;
+
+transition:0.3s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+
+.card h3{
+
+color:#e53935;
+
+margin-bottom:15px;
+
+font-size:22px;
+
+}
+
+
+.card p{
+
+font-size:35px;
+
+font-weight:bold;
+
+}
+
+
+
+/* ACTION BUTTONS */
+
+.actions{
+
+text-align:center;
+
+margin:40px;
+
+}
+
+
+.action-btn{
+
+background:#e53935;
+
+color:white;
+
+padding:12px 25px;
+
+margin:10px;
+
+text-decoration:none;
+
+border-radius:6px;
+
+display:inline-block;
+
+transition:0.3s;
+
+}
+
+
+.action-btn:hover{
+
+background:#c62828;
+
+transform:translateY(-3px);
+
 }

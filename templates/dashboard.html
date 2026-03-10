@@ -1,102 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloodBank Pro | Inventory</title>
-    <link rel="stylesheet" href="dashboard-styles.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+<meta charset="UTF-8">
+<title>Dashboard - BBMS</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-    <div class="dashboard-wrapper">
-        <aside class="sidebar">
-            <div class="logo-section">
-                <i class="ph-fill ph-drop"></i>
-                <span>BloodBank <strong>Pro</strong></span>
-            </div>
-            <nav class="side-nav">
-                <a href="#"><i class="ph ph-squares-four"></i> Dashboard</a>
-                <a href="#" class="active"><i class="ph ph-drop-half-bottom"></i> Blood Inventory</a>
-                <a href="#"><i class="ph ph-users"></i> Donors</a>
-                <a href="#"><i class="ph ph-hand-heart"></i> Requests</a>
-                <a href="#"><i class="ph ph-chart-line-up"></i> Reports</a>
-            </nav>
 
-            <div class="user-footer">
-                <div class="user-avatar">TR</div>
-                <div class="user-meta">
-                    <p class="user-name">Tushar Rathva</p>
-                    <p class="user-role">Staff Member</p>
-                </div>
-            </div>
-        </aside>
+<!-- NAVBAR -->
 
-        <main class="content-body">
-            <header class="content-header">
-                <div class="header-titles">
-                    <h1>Blood Inventory</h1>
-                    <p>Track and manage available blood units</p>
-                </div>
-                <button class="add-unit-btn">+ Add Blood Unit</button>
-            </header>
+<nav class="navbar">
 
-            <section class="stats-overview">
-                <div class="stat-box blue">
-                    <i class="ph ph-package"></i>
-                    <div><span class="label">TOTAL UNITS</span><span class="value">5</span></div>
-                </div>
-                <div class="stat-box green">
-                    <i class="ph ph-check-circle"></i>
-                    <div><span class="label">AVAILABLE</span><span class="value">4</span></div>
-                </div>
-                <div class="stat-box orange">
-                    <i class="ph ph-clock"></i>
-                    <div><span class="label">RESERVED</span><span class="value">1</span></div>
-                </div>
-                <div class="stat-box red">
-                    <i class="ph ph-warning"></i>
-                    <div><span class="label">EXPIRING</span><span class="value">5</span></div>
-                </div>
-            </section>
+<div class="logo">BBMS</div>
 
-            <section class="inventory-container">
-                <article class="blood-unit-card expired">
-                    <div class="card-top">
-                        <span class="blood-group">O+</span>
-                        <div class="unit-id">
-                            <strong>BU001</strong>
-                            <small>450ml</small>
-                        </div>
-                        <span class="status-chip">Expired</span>
-                    </div>
-                    <div class="card-details">
-                        <p>Donor: <strong>John Smith</strong></p>
-                        <p>Collected: <strong>15/01/2024</strong></p>
-                        <p class="expiry-text">Expires: <strong>15/03/2024</strong></p>
-                        <p>Location: <strong>Freezer A-1</strong></p>
-                    </div>
-                </article>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/dashboard">Dashboard</a></li>
+<li><a href="/search">Search</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
 
-                <article class="blood-unit-card">
-                    <div class="card-top">
-                        <span class="blood-group">A+</span>
-                        <div class="unit-id">
-                            <strong>BU002</strong>
-                            <small>450ml</small>
-                        </div>
-                        <span class="status-chip available">Available</span>
-                    </div>
-                    <div class="card-details">
-                        <p>Donor: <strong>Sarah Johnson</strong></p>
-                        <p>Collected: <strong>10/01/2024</strong></p>
-                        <p>Expires: <strong>10/03/2024</strong></p>
-                        <p>Location: <strong>Freezer A-2</strong></p>
-                    </div>
-                </article>
-            </section>
-        </main>
-    </div>
+</nav>
+
+
+<!-- DASHBOARD TITLE -->
+
+<div class="dashboard-title">
+
+<h1>Admin Dashboard</h1>
+<p>Manage Blood Bank System</p>
+
+</div>
+
+
+
+<!-- DASHBOARD CARDS -->
+
+<div class="dashboard">
+
+<div class="card">
+
+<h3>Total Donors</h3>
+
+<p>{{ total_donors }}</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Blood Groups</h3>
+
+<p>8</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Available Units</h3>
+
+<p>120</p>
+
+</div>
+
+</div>
+
+
+
+<!-- QUICK ACTIONS -->
+
+<div class="actions">
+
+<a href="/register" class="action-btn">Add Donor</a>
+
+<a href="/search" class="action-btn">Search Donor</a>
+
+<a href="/" class="action-btn">Homepage</a>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Blood Bank Management System</p>
+
+</footer>
+
 
 </body>
 </html>
