@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodBank Pro - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="sidebar">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            
+            <div class="sidebar-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>BloodBank Pro</h1>
+                        <span>Management System</span>
+                    </div>
+                </div>
+
+                <h2 class="welcome-title">Welcome Back!</h2>
+                <p class="description">
+                    Access the comprehensive blood bank management system to save lives and manage critical resources efficiently.
+                </p>
+
+                <ul class="features">
+                    <li><i class="fa-regular fa-heart"></i> Real-time inventory tracking</li>
+                    <li><i class="fa-regular fa-heart"></i> Donor management system</li>
+                    <li><i class="fa-regular fa-heart"></i> Request processing & allocation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to access the Blood Bank Management System</p>
+            </div>
+
+            <form>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope icon-left"></i>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock icon-left"></i>
+                        <input type="password" id="passwordField" placeholder="Enter your password" required>
+                        <i class="fa-regular fa-eye icon-right" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="sign-in-btn">Sign In</button>
+            </form>
+
+            <p class="signup-link">
+                Don't have an account? <a href="#">Sign up here</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#passwordField');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
