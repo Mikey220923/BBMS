@@ -1,10 +1,135 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blood Bank Management System</title>
 
-{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<header>
-    <h1 class="main-title">Welcome to Blood Bank Management System</h1>
-    <p>Donate Blood, Save Lives ❤️</p>
-</header>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-{% endblock %}
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">BBMS</div>
+
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/search">Find Blood</a></li>
+<li><a href="/register">Become Donor</a></li>
+<li><a href="/login">Admin</a></li>
+</ul>
+
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Save Lives With Blood Donation</h1>
+
+<p>
+One donation can save up to three lives.
+Join our donor network and help patients in need.
+</p>
+
+<div class="hero-buttons">
+
+<a href="/register" class="btn">Donate Blood</a>
+<a href="/search" class="btn secondary">Find Donor</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<div class="blood-drop"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- COUNTER SECTION -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h2 id="donorCount">0</h2>
+<p>Registered Donors</p>
+
+</div>
+
+<div class="stat">
+
+<h2>8</h2>
+<p>Blood Groups</p>
+
+</div>
+
+<div class="stat">
+
+<h2>24/7</h2>
+<p>Emergency Support</p>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<h2>Our Services</h2>
+
+<div class="feature-grid">
+
+<div class="card">
+<h3>Search Donors</h3>
+<p>Find blood donors instantly by blood group and location.</p>
+</div>
+
+<div class="card">
+<h3>Register Donor</h3>
+<p>Become a lifesaver by joining our blood donation community.</p>
+</div>
+
+<div class="card">
+<h3>Blood Availability</h3>
+<p>Check blood availability quickly for emergency cases.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Blood Bank Management System</p>
+
+</footer>
+
+
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
