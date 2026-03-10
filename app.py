@@ -91,21 +91,31 @@ def search():
 
 
 # -----------------------------
-# MAIN
+# DASHBOARD
 # -----------------------------
-if __name__ == '__main__':
-    app.run(debug=True)
-
-    @app.route('/dashboard')
+@app.route('/dashboard')
 def dashboard():
+    conn = sqlite3.connect('bloodbank.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM donors")
+    donors = cursor.fetchall()
+    conn.close()
+
     total_donors = len(donors)
 
     blood_groups = set()
     for donor in donors:
-        blood_groups.add(donor['blood_group'])
+        blood_groups.add(donor[2])  # blood_group is at index 2 in the tuple
 
     total_blood_groups = len(blood_groups)
 
     return render_template('dashboard.html',
                            total_donors=total_donors,
                            total_blood_groups=total_blood_groups)
+
+
+# -----------------------------
+# MAIN
+# -----------------------------
+if __name__ == '__main__':
+    app.run(debug=True)
